@@ -12,30 +12,35 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-//        Random random = new Random();
-//        String[] namePerson = new String[]{"Petr", "Alex", "Roman", "Evgeniy", "Mark", "Victor", "Matvey", "Miron", "Oleg", "Yaroslav"};
-//        String[] surnamePerson = new String[]{"Petrovich", "Simonyn", "Nesterov", "Durmanov", "Vasilenko", "Ostrovskiy", "Matveychenko", "Migor", "Lenin", "Pslovko", "Artev"};
-//        ArrayList<Person> people = new ArrayList<>();
-//
-//        for (int i = 0; i < 100; i++) {
-//            String name = namePerson[random.nextInt(namePerson.length)];
-//            String surname = surnamePerson[random.nextInt(surnamePerson.length)];
-//            int age = random.nextInt(95 - 18) + 18;
-//            int height = random.nextInt(200 - 165) + 165;
-//            int weight = height - 100 - (height - 150) / 2;
-//            people.add(new Person(name, surname, age, weight, height));
-//        }
+        Random random = new Random();
+        String[] namePerson = new String[]{"Petr", "Alex", "Roman", "Evgeniy", "Mark", "Victor", "Matvey", "Miron", "Oleg", "Yaroslav"};
+        String[] surnamePerson = new String[]{"Petrovich", "Simonyn", "Nesterov", "Durmanov", "Vasilenko", "Ostrovskiy", "Matveychenko", "Migor", "Lenin", "Pslovko", "Artev"};
+        ArrayList<Person> people = new ArrayList<>();
+
+        for (int i = 0; i < 100; i++) {
+            String name = namePerson[random.nextInt(namePerson.length)];
+            String surname = surnamePerson[random.nextInt(surnamePerson.length)];
+            int age = random.nextInt(95 - 18) + 18;
+            int height = random.nextInt(200 - 165) + 165;
+            int weight = height - 100 - (height - 150) / 2;
+            people.add(new Person(name, surname, age, weight, height));
+        }
 
         int[] arr = { 8, 0, 4, 7, 3, 7, 10, 12, -3,-12, 9,50 ,80 };
         int low = 0;
         int high = arr.length - 1;
-//        QuickSort.quickSort(arr, low, high);
-//        System.out.println("QuickSort: "+ Arrays.toString(arr));
+        QuickSort.quickSort(arr, low, high);
+        System.out.println("QuickSort: "+ Arrays.toString(arr));
 
-        MergeSort.mergeSort(arr, low, high);
-        System.out.println("MergeSort: "+ Arrays.toString(arr));
+        int[] arr1 = { 8, 0, 4, 7, 70, 7, 10, 12, -3,-22, 9,50 ,8 };
+        low = 0;
+        high = arr1.length - 1;
+        MergeSort.mergeSort(arr1, low, high);
+        System.out.println("MergeSort: "+ Arrays.toString(arr1));
 
-
+        int[] arr2 = { 5, 5, 4, 3, 70, 7, 10, 11, -3,-99, 9,2 ,1 };
+        HeapSort.heapSort(arr2);
+        System.out.println("HeapSort: "+Arrays.toString(arr2));
 
     }
 }
